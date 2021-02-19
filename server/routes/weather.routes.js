@@ -7,7 +7,7 @@ router.get("/searchResult", (req, res) => {
 
   axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${process.env.OWAPI_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=${process.env.OWAPI_key}`
     )
     .then((response) => {
       console.log(`The response is ${response}`);
