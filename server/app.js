@@ -8,6 +8,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const cors         = require('cors');
 const path         = require('path');
+const axios        = require('axios');
 
 require("./configs/db.configs");
 
@@ -53,6 +54,7 @@ app.locals.title = 'React Weather App';
 
 
 app.use('/api', require("./routes/index"));
+app.use("/api", require("./routes/weather.routes"))
 
 
 
