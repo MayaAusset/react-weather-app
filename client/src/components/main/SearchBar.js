@@ -12,13 +12,12 @@ const SearchBar = () => {
       const service = new WeatherService();
       service
         .getLocation(query)
-        .then((res) => res.json())
         .then((result) => {
           setQuery("");
           setWeather(result);
-          console.log(`The WEATHER IS ${weather}`)
+          console.log(`The WEATHER IS ${result}`);
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(`ERROR FROM SEARCH BAR`, error));
     }
   };
 
