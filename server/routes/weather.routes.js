@@ -3,17 +3,18 @@ const router = express.Router();
 const axios = require("axios");
 
 router.get("/searchResult", (req, res) => {
-  const { cityName } = req.query;
+  const { query } = req.query;
 
   axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=${process.env.OWAPI_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${process.env.OWAPI_key}`
     )
     .then((response) => {
-      console.log(`The response is ${response}`);
+      console.log(`RESPONSE FROM WEATHER ROUTES IS ${response}`);
       res.status(200).json(response);
     })
     .catch((err) => {
+        console.log(`ERROR FROM WEATHER ROUTES JS ON SERVER`);
         res.status(500).json(err);
     });
 });
