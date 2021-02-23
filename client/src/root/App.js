@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar from "../components/main/NavBar";
 import { Route, Switch } from "react-router-dom";
 
 
@@ -10,8 +9,6 @@ import LocationResultCard from "../components/locationResults/LocationResultCard
 const App = () => {
   return (
     <div className="App">
-      <NavBar />
-
       <Switch>
         <Route exact path="/" component={SearchBar} />
         <Route path="/results" component={LocationResult} />

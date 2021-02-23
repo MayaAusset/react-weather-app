@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import NavBar from "../main/NavBar";
 import WeatherService from "../../service/weather.service";
+import SearchResult from "./SearchResult";
 
 const SearchBar = () => {
   const [city, setCity] = useState("");
@@ -21,7 +23,22 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="app">
+    <div className={
+      (typeof weather.main != "undefined") 
+      ? ((weather.main.temp >= 25 && weather.main.temp < 40) 
+      ? "app hot"
+      : (weather.main.temp > 16 && weather.main.temp < 25) 
+      ? "app warm" 
+      : (weather.main.temp > 10 && weather.main.temp < 16) 
+      ? "app cold"
+      : (weather.main.temp < 10) 
+      ? "app verycold"
+      : "app") 
+      : "app"
+    }>
+    <div>
+      <NavBar/>
+    </div>
       <div className="search-box">
         <input
           type="text"
@@ -32,22 +49,7 @@ const SearchBar = () => {
           onKeyPress={search}
         />
          </div>
-      {typeof weather.main != "undefined" ? (
-        <div>
-          <div className="location-box">
-            <div className="location">
-              {weather.name}, {weather.sys.country}
-            </div>
-          </div>
-          <div className="weather-box">
-            <div className="temp">{Math.round(weather.main.temp)}°C</div>
-            <div className="weather">{weather.weather[0].main}</div>
-          </div>
-        </div>
-      ) : (
-        " "
-      )}
-     
+         <SearchResult weather={weather}/>
     </div>
   );
 };
