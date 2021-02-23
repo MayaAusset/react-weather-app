@@ -1,14 +1,14 @@
 .App {
   text-align: center;
-  background-color: rgba(0,0,0,0.2);
 }
 *{
-  margin: 20px;
+  padding: 30px;
   padding: 0;
   box-sizing: border-box;
 }
 
 body{
+  margin: 20px;
   font-family: 'monseratt', sans-serif;
 }
 .app.warm{
@@ -16,11 +16,10 @@ body{
 }
 .search-box{
   width: 100%;
-  margin: 0 0 75px;
 }
 .search-box .search-bar{
-  display: block;
-  width: 100%;
+  margin: 20px 40px;
+  width: 50%;
   padding: 15px;
 
   appearance: none;
@@ -29,7 +28,7 @@ body{
   outline: none ;
 
   background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 0px 0px 16px 16px;
+  border-radius: 30px;
   margin-top: 25px;
 
   box-shadow: 0px 5px rgba(0,0,0,0.2);
@@ -41,23 +40,21 @@ body{
 }
 
 .search-box .search-bar:hover{
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(233, 248, 253, 0.75);
 }
 .location-box .location{
-  color: #FFF;
+  color: black;
   font-size: 32px;
   font-weight: 500;
   text-align: center;
-  text-shadow: 3px 3px rgba(50,50,70,0.5);
 }
 
 .location-box .date{
-  color: #FFF;
+  color: black;
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
   text-align: center;
-  text-shadow: 2px 2px rgba(50,50,70,0.5);
 }
 .weather-box{
   text-align: center;
@@ -67,19 +64,19 @@ body{
   display: inline-block;
   margin: 30px auto;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  border-radius: 30px;
 
   padding: 15px 25px;
 
-  color: #FFF;
-  font-size: 102px;
+  color: black;
+  font-size: 100px;
   font-weight: 900;
 
-  box-shadow: 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px rgba(0,0,0,0.2);
 }
 
 .weather-box .weather{
-  color: #FFF;
+  color: black;
   font-size: 48px;
   font-weight: 700;
 }
