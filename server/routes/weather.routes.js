@@ -1,21 +1,29 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+require("dotenv").config();
 
-router.get("/searchResult", (req, res) => {
-  const { query } = req.query;
 
-  axios
+router.get("/searchResult/:city", (req, res) => {
+  const { city } = req.params;
+  //console.log(` 🔵  params is ${city}`)
+  
+    axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${process.env.OWAPI_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${process.env.OWAPI_key}`
+      //`http://api.openweathermap.org/data/2.5/weather?q=Biarritz&units=metric&APPID=${process.env.OWAPI_key}`
     )
-    .then((response) => {
-      console.log(`RESPONSE FROM WEATHER ROUTES IS ${response}`);
-      res.status(200).json(response);
+    .then(function (response) { 
+      console.log(` 🟢 RESPONSE FROM WEATHER ROUTES IS ${response.data.name}`);
+      
+      res.status(200).json(response.data);
     })
-    .catch((err) => {
-        console.log(`ERROR FROM WEATHER ROUTES JS ON SERVER`);
-        res.status(500).json(err);
+    .catch(function (error) {
+      //console.log(`REQUET PARAMETERS ARE ${req.query}`)
+      console.log(`🔴 ERROR FROM WEATHER ROUTES JS ON SERVER`);
+      res.status(500).json(error);
+    })
+    .then(function () {
     });
 });
 

@@ -7,9 +7,14 @@ class WeatherService {
       withCredentials: true, // indicates whether or not cross-site Access-Control requests should be made using credentials
     });
   }
-  getLocation = () => {
-    return this.service.get("/api/searchResult").then((response) => response);
+  getLocation = (city) => {
+    return this.service
+                .get(`api/searchResult/${city}`)
+                .then((res) => res);
   };
+  getTest = () => {
+    return this.service.get("api/testing").then((response) => console.log(response))
+  }
 }
 
 export default WeatherService;

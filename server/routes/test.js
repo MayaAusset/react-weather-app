@@ -18,7 +18,7 @@ const workingApi = () => {
         response.status(500).json(err);
     }); */
 
-    const city = "Biarritz";
+    const city = "London";
     //console.log(`NV IS ${process.env.OWAPI_key}`)
   axios
     .get(

@@ -2,24 +2,34 @@ import React, { useState } from "react";
 import WeatherService from "../../service/weather.service";
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
-
-  //console.log(query)
 
   const search = (evt) => {
     if (evt.key === "Enter") {
       const service = new WeatherService();
+      console.log(`city is ${city}`)
       service
-        .getLocation(query)
+        .getLocation(city)
         .then((result) => {
-          setQuery("");
-          setWeather(result);
-          console.log(`The WEATHER IS ${result}`);
+          setCity("");
+          setWeather(result.data);
+          console.log(`The WEATHER IS ${result.data}`);
         })
         .catch((error) => console.error(`ERROR FROM SEARCH BAR`, error));
     }
   };
+
+/*   const testService = () => {
+    const service = new WeatherService();
+      service
+        .getTest()
+        .then((result) => {
+          console.log(`YOU PRESSED THE BUTTON : ${result}`);
+        })
+        .catch((error) => console.error(`ERROR FROM SEARCH BAR after YOU PRESSED THE BUTTON`, error));
+    }
+   */
 
   const dateBuilder = (d) => {
     let months = [
@@ -55,17 +65,22 @@ const SearchBar = () => {
 
   return (
     <div className="app">
+    {/* <div>
+      <button onClick={testService}>
+        TEST SERVICE
+      </button>
+    </div> */}
       <div className="search-box">
         <input
           type="text"
           className="search-bar"
           placeholder="Search city..."
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
+          onChange={(e) => setCity(e.target.value)}
+          value={city}
           onKeyPress={search}
         />
         <div className="location-box">
-          <div className="location">NYC</div>
+          <div className="location">{weather.name}</div>
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">

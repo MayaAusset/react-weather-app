@@ -53,5 +53,7 @@ app.locals.title = "React Weather App";
 
 app.use("/api", require("./routes/index"));
 app.use("/api", require("./routes/weather.routes"));
+app.use("/api", require("./routes/test.routes"));
+
 
 module.exports = app;
