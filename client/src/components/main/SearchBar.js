@@ -7,7 +7,7 @@ const SearchBar = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
 
-  console.log(weather.data);
+  //console.log(weather.data);
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -23,22 +23,24 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={
-      (typeof weather.main != "undefined") 
-      ? ((weather.main.temp >= 25 && weather.main.temp < 40) 
-      ? "app hot"
-      : (weather.main.temp > 16 && weather.main.temp < 25) 
-      ? "app warm" 
-      : (weather.main.temp > 10 && weather.main.temp < 16) 
-      ? "app cold"
-      : (weather.main.temp < 10) 
-      ? "app verycold"
-      : "app") 
-      : "app"
-    }>
-    <div>
-      <NavBar/>
-    </div>
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? weather.main.temp >= 25 && weather.main.temp < 40
+            ? "app hot"
+            : weather.main.temp > 16 && weather.main.temp < 25
+            ? "app warm"
+            : weather.main.temp > 10 && weather.main.temp < 16
+            ? "app cold"
+            : weather.main.temp < 10
+            ? "app verycold"
+            : "app"
+          : "app"
+      }
+    >
+      <div className="navBar">
+        <NavBar />
+      </div>
       <div className="search-box">
         <input
           type="text"
@@ -48,8 +50,10 @@ const SearchBar = () => {
           value={city}
           onKeyPress={search}
         />
-         </div>
-         <SearchResult weather={weather}/>
+      </div>
+      <div className="search-result">
+        <SearchResult weather={weather} />
+      </div>
     </div>
   );
 };
