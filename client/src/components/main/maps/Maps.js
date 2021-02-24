@@ -5,16 +5,23 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import mapStyles from "./mapStyles";
+import icon from "../../../assets/rating (2).png";
 
-const Maps = () => {
+const Maps = ({ props }) => {
+  //console.log(props.coord.lon)
   const librairies = ["places"];
   const mapContainerStyle = {
-    width: "300px",
-    height: "300px",
+    width: "100%",
+    height: "200px",
   };
   const center = {
-    lat: 48.8534,
-    lng: 2.3488,
+    lat: props.coord.lat,
+    lng: props.coord.lon,
+  };
+  const options = {
+    styles: mapStyles,
+    disableDefaultUI: true,
   };
 
   const { isLoaded, loadError } = useLoadScript({
@@ -28,11 +35,22 @@ const Maps = () => {
     <div>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={8}
+        zoom={4}
         center={center}
-      ></GoogleMap>
+        options={options}
+      >
+        <Marker
+          key={props.name}
+          position={{ lat: props.coord.lat, lng: props.coord.lon }}
+          icon={{
+              url: icon,
+             scaledSize: new window.google.maps.Size(50,50),
+             origin: new window.google.maps.Point(0,0)  
+          }}
+        />
+      </GoogleMap>
     </div>
   );
-}; 
+};
 
 export default Maps;

@@ -18,11 +18,13 @@ const SearchResult = ({ weather }) => {
             </div>
           </div>
           <div className="map-result">
-            <Maps />
+            <Maps props={weather}/>
           </div>
         </div>
       ) : (
-        " "
+        <div>
+          <p>Enter a valid city name !</p>
+        </div>
       )}
     </div>
   );
