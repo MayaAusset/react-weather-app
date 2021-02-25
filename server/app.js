@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//COrs middleware
+//Cors middleware
 app.use(
   cors({
     origin: ["http://localhost:3000"],

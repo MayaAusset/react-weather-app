@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 
-
 import SearchBar from "../components/main/SearchBar";
 
 const App = () => {
@@ -12,6 +11,6 @@ const App = () => {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;

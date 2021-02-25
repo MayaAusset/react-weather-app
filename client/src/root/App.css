@@ -1,32 +1,39 @@
-.navBar{
-  padding-top: 30px;
+.title {
+  padding-top: 1px;
+  margin-bottom: -50px;
+  font-size: 2.3rem;
 }
 .App {
   text-align: center;
+  transition-duration: 6s ease;
 }
 
 body {
-  font-family: "monseratt", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .app.hot {
   background: linear-gradient(#fd4848, #46bcec, #46bcec);
+  transition-duration: 6s ease;
 }
 .app.warm {
   background: linear-gradient(#fae56b, #46bcec, #46bcec);
+  transition-duration: 6s ease;
 }
 .app.cold {
   background: linear-gradient(#abffdf, #46bcec, #46bcec);
+  transition-duration: 6s ease;
 }
 .app.verycold {
   background: linear-gradient(#ffffff, #46bcec, #46bcec);
+  transition-duration: 6s ease;
 }
 .search-box {
   width: 100%;
 }
 .search-box .search-bar {
-  margin: 20px 40px;
+  margin: 15px;
   width: 50%;
-  padding: 15px;
+  padding: 10px;
 
   appearance: none;
   background: none;
@@ -39,10 +46,10 @@ body {
 
   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 
-  color: #313131;
+  color: rgb(91, 221, 253);
   font-size: 20px;
 
-  transition: 0.4s;
+  transition: 4s ease;
 }
 
 .search-box .search-bar:hover {
@@ -50,16 +57,8 @@ body {
 }
 .location-box .location {
   color: black;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
-  text-align: center;
-}
-
-.location-box .date {
-  color: black;
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
   text-align: center;
 }
 .weather-box {
@@ -72,35 +71,54 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
 
-  padding: 15px 25px;
+  padding: 15px 15px;
 
   color: black;
-  font-size: 100px;
-  font-weight: 900;
+  font-size: 60px;
 
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
-
 .weather-box .weather {
   color: black;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 500;
 }
-@media only screen and (min-width: 300px) and (max-width: 800px){
-  .navBar{
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+  .navBar {
     padding-top: 10px;
   }
-  .weather-box{
+  .weather-box {
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin: 20px;
   }
-  .weather-box .temp{
+  .weather-box .temp {
     font-size: 50px;
     margin: 30px;
   }
   .location-box .location {
     font-size: 20px;
+  }
+  .search-box .search-bar {
+    margin: 15px;
+    width: 50%;
+    padding: 10px;
+
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    margin-top: 25px;
+
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+    color: rgb(91, 221, 253);
+    font-size: 15px;
+
+    transition: 4s ease;
   }
 }

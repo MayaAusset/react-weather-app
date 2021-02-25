@@ -4,13 +4,11 @@ class WeatherService {
   constructor() {
     this.service = axios.create({
       baseURL: process.env.REACT_APP_BASE_URL,
-      withCredentials: true, 
+      withCredentials: true,
     });
   }
   getLocation = (city) => {
-    return this.service
-                .get(`api/searchResult/${city}`)
-                .then((res) => res);
+    return this.service.get(`api/searchResult/${city}`).then((res) => res);
   };
 }
 

@@ -6,8 +6,6 @@ const NavBar = () => {
   return (
     <div>
       <h1>The Weather App</h1>
-
-     
     </div>
   );
 };

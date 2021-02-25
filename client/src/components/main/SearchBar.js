@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import NavBar from "../main/NavBar";
 import WeatherService from "../../service/weather.service";
 import SearchResult from "./SearchResult";
 
 const SearchBar = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
-
-  //console.log(weather.data);
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -38,8 +35,8 @@ const SearchBar = () => {
           : "app"
       }
     >
-      <div className="navBar">
-        <NavBar />
+      <div className="title">
+        <p>React Weather App</p>
       </div>
       <div className="search-box">
         <input

@@ -9,8 +9,24 @@
 .map-result {
   margin: 30px;
 }
-.dynamicIcon{
-    width: 250px;
+.dynamicIcon {
+  width: 160px;
+}
+.footer {
+  color: rgb(129, 229, 253);
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(#46bcec, #0480b1);
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #23444d;
+  text-decoration: none;
+  cursor: pointer;
 }
 @media only screen and (min-width: 300px) and (max-width: 800px) {
   .search-result {
@@ -23,10 +39,10 @@
   }
   .map-result {
     margin: 10px;
+    margin-left: 20px;
   }
-  .dynamicIcon{
-   width: 150px;
-  }
-  .maps{
+  .dynamicIcon {
+    padding-top: 30px;
+    width: 140px;
   }
 }

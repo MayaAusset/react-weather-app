@@ -3,18 +3,16 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow,
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import icon from "../../../assets/rating (2).png";
 import "../SearchResult.css";
 
 const Maps = ({ props }) => {
-  //console.log(props.coord.lon)
   const librairies = ["places"];
   const mapContainerStyle = {
     width: "500px",
-    height: "500px",
+    height: "450px",
   };
   const center = {
     lat: props.coord.lat,
