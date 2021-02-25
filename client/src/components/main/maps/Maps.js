@@ -7,13 +7,14 @@ import {
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import icon from "../../../assets/rating (2).png";
+import "../SearchResult.css";
 
 const Maps = ({ props }) => {
   //console.log(props.coord.lon)
   const librairies = ["places"];
   const mapContainerStyle = {
-    width: "100%",
-    height: "200px",
+    width: "500px",
+    height: "500px",
   };
   const center = {
     lat: props.coord.lat,
@@ -43,9 +44,9 @@ const Maps = ({ props }) => {
           key={props.name}
           position={{ lat: props.coord.lat, lng: props.coord.lon }}
           icon={{
-              url: icon,
-             scaledSize: new window.google.maps.Size(50,50),
-             origin: new window.google.maps.Point(0,0)  
+            url: icon,
+            scaledSize: new window.google.maps.Size(50, 50),
+            origin: new window.google.maps.Point(0, 0),
           }}
         />
       </GoogleMap>

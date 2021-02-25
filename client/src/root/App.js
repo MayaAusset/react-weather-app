@@ -6,7 +6,7 @@ import SearchBar from "../components/main/SearchBar";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App  example">
       <Switch>
         <Route exact path="/" component={SearchBar} />
       </Switch>

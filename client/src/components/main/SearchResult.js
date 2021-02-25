@@ -1,11 +1,13 @@
 import React from "react";
 import Maps from "./maps/Maps";
+import "./SearchResult.css";
+import DynamicIcon from "./DynamicIcon";
 
 const SearchResult = ({ weather }) => {
   return (
     <div>
       {typeof weather.main != "undefined" ? (
-        <div>
+        <div className="search-result">
           <div className="weather-result">
             <div className="location-box">
               <div className="location">
@@ -14,11 +16,13 @@ const SearchResult = ({ weather }) => {
             </div>
             <div className="weather-box">
               <div className="temp">{Math.round(weather.main.temp)}°C</div>
-              <div className="weather">{weather.weather[0].main}</div>
+              <div>
+              <DynamicIcon weather={weather}/>
+              </div>
             </div>
           </div>
           <div className="map-result">
-            <Maps props={weather}/>
+            <Maps props={weather} />
           </div>
         </div>
       ) : (

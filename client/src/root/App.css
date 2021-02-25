@@ -3,27 +3,22 @@
 }
 .App {
   text-align: center;
-  transition: 0.4s ease;
 }
 
 body {
   font-family: "monseratt", sans-serif;
 }
 .app.hot {
-  background: linear-gradient(#fc1b1b, #f7b439);
-  transition: 0.4s ease;
+  background: linear-gradient(#fd4848, #46bcec, #46bcec);
 }
 .app.warm {
-  background: linear-gradient(#fae56b, #39f1f7);
-  transition: 0.4s ease;
+  background: linear-gradient(#fae56b, #46bcec, #46bcec);
 }
 .app.cold {
-  background: linear-gradient(#f4fffb, #39d7e2);
-  transition: 0.4s ease;
+  background: linear-gradient(#abffdf, #46bcec, #46bcec);
 }
 .app.verycold {
-  background: linear-gradient(#ecedf5, #0166fd);
-  transition: 0.4s ease;
+  background: linear-gradient(#ffffff, #46bcec, #46bcec);
 }
 .search-box {
   width: 100%;
@@ -47,7 +42,7 @@ body {
   color: #313131;
   font-size: 20px;
 
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 .search-box .search-bar:hover {
@@ -90,4 +85,22 @@ body {
   color: black;
   font-size: 48px;
   font-weight: 700;
+}
+@media only screen and (min-width: 300px) and (max-width: 800px){
+  .navBar{
+    padding-top: 10px;
+  }
+  .weather-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px;
+  }
+  .weather-box .temp{
+    font-size: 50px;
+    margin: 30px;
+  }
+  .location-box .location {
+    font-size: 20px;
+  }
 }

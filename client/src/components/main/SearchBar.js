@@ -51,7 +51,7 @@ const SearchBar = () => {
           onKeyPress={search}
         />
       </div>
-      <div className="search-result">
+      <div>
         <SearchResult weather={weather} />
       </div>
     </div>
